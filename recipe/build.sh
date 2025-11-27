@@ -19,10 +19,12 @@ cp -r ltex-ls-${PKG_VERSION}/* ${PREFIX}/libexec/${PKG_NAME}
 tee ${PREFIX}/bin/ltex-cli << EOF
 exec \${CONDA_PREFIX}/libexec/ltex-ls/bin/ltex-cli "\$@"
 EOF
+chmod +x ${PREFIX}/bin/ltex-cli
 
 tee ${PREFIX}/bin/ltex-ls << EOF
 exec \${CONDA_PREFIX}/libexec/ltex-ls/bin/ltex-ls "\$@"
 EOF
+chmod +x ${PREFIX}/bin/ltex-ls
 
 tee ${PREFIX}/bin/ltex-cli.cmd << EOF
 call %CONDA_PREFIX%\libexec\ltex-ls\bin\ltex-cli.bat %*
